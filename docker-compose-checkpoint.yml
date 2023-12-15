@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  datascience-demo:
+    image: quay.io/jupyter/datascience-notebook    
+    environment:
+      - JUPYTER_TOKEN="hallo"
+    volumes:
+      - ./:/home/jovyan/work
+    ports:
+      - 8888:8888
+    container_name: datascience_demo
+
