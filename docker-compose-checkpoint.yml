@@ -3,7 +3,7 @@ services:
   datascience-demo:
     image: quay.io/jupyter/datascience-notebook    
     environment:
-      - JUPYTER_TOKEN="hallo"
+      - JUPYTER_TOKEN="hallo world"
     volumes:
       - ./:/home/jovyan/work
     ports:
