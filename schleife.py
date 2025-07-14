@@ -31,6 +31,10 @@ for dateiname in dateien:
         else:
             zustand = "Z"
 
-        print(f"Standardabweichung in '{spaltenname}' (Datei: {dateiname}):{artikelnummer}, {standardabweichung:.2f}, Zustand: {zustand}")
-    else:
+    with open("output.csv", "a") as datei:
+      datei.write("{artikelnummer};{standardabweichung:.2f};{zustand}\n")
+      datei.write("Zeile 2\n") 
+        
+    print(f"Standardabweichung in '{spaltenname}' (Datei: {dateiname}):{artikelnummer}, {standardabweichung:.2f}, Zustand: {zustand}")
+else:
         print(f"⚠️ Spalte '{spaltenname}' nicht in Datei {dateiname} gefunden.")
