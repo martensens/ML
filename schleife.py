@@ -8,6 +8,9 @@ dateien = sorted(glob.glob("*_datei.csv"))
 anzahl_dateien = len(dateien)
 print(f"Anzahl gefundener Dateien: {anzahl_dateien}")
 
+with open("output.csv", "a") as datei:
+      datei.write("Artikelnummer;Abweichung;Zustand\n")
+      
 for dateiname in dateien:
     print(f"\nVerarbeite Datei: {dateiname}")
 
@@ -30,9 +33,9 @@ for dateiname in dateien:
             zustand = "Y"
         else:
             zustand = "Z"
-
+            
     with open("output.csv", "a") as datei:
-      datei.write(f"{artikelnummer};{standardabweichung:.2f};{zustand}\n")
+        datei.write(f"{artikelnummer};{standardabweichung:.2f};{zustand}\n")
         
     print(f"Standardabweichung in '{spaltenname}' (Datei: {dateiname}):{artikelnummer}, {standardabweichung:.2f}, Zustand: {zustand}")
 else:
