@@ -32,8 +32,7 @@ for dateiname in dateien:
             zustand = "Z"
 
     with open("output.csv", "a") as datei:
-      datei.write("{artikelnummer};{standardabweichung:.2f};{zustand}\n")
-      datei.write("Zeile 2\n") 
+      datei.write(f"{artikelnummer};{standardabweichung:.2f};{zustand}\n")
         
     print(f"Standardabweichung in '{spaltenname}' (Datei: {dateiname}):{artikelnummer}, {standardabweichung:.2f}, Zustand: {zustand}")
 else:
