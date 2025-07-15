@@ -36,7 +36,6 @@ for dateiname in dateien:
             
     with open("output.csv", "a") as datei:
         datei.write(f"{artikelnummer};{standardabweichung:.2f};{zustand}\n")
-        
-    print(f"Standardabweichung in '{spaltenname}' (Datei: {dateiname}):{artikelnummer}, {standardabweichung:.2f}, Zustand: {zustand}")
 else:
         print(f"⚠️ Spalte '{spaltenname}' nicht in Datei {dateiname} gefunden.")
+print("Datei wurde erstellt")
